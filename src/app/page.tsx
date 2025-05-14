@@ -1,16 +1,12 @@
+import dynamic from 'next/dynamic';
 
-import GsapFromTo from "@/components/GsapFromTo";
-import GsapTimeline from "@/components/GsapTimeline";
-import GsapTo from "@/components/GsapTo";
+const SolarScene = dynamic(() => import('@/components/SolarScene')); // dùng ssr là vì đây sẽ là file ở trên server mà server không có window và document nên phải chuyển cho trình duyệt nghĩa là nó đang là client-side
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <GsapTo />
-        <GsapFromTo/>
-        <GsapTimeline/>
-      </main>
-      
-    </div>
-  );
+    return (
+        <div className="h-screen w-screen">
+            <main className="row-start-2 w-full h-full">
+                <SolarScene />
+            </main>
+        </div>
+    );
 }
