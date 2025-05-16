@@ -18,9 +18,12 @@ export default function PublicLayout({
                     <Link href="/contact" className="hover:text-blue-600 font-medium">
                         Contact
                     </Link>
+                    <Link href="/Gsap/Practice" className="hover:text-blue-600 font-medium">
+                        Practice
+                    </Link>
                 </nav>
             </header>
-            {children}
+            <main className="container mx-auto">{children}</main>
         </>
     );
 }
